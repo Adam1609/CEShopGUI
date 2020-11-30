@@ -1,0 +1,13 @@
+name: CEShopGUI
+main: kenygamer\CEShopGUI\Main
+api: 3.9.0
+version: 1.0.0
+load: POSTWORLD
+
+author: kenygamer
+description: This is a plugin that enables a GUI custom enchant shop for your server.
+    
+permissions:
+  ceshopgui.command.ceshop:
+    description: Allows access to the ceshop command
+    default: true

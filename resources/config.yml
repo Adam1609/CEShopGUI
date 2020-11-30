@@ -1,0 +1,58 @@
+#    _____      _____ _                  _____ _    _ _____ 
+#  / ____|    / ____| |                / ____| |  | |_   _|
+#  | |     ___| (___ | |__   ___  _ __ | |  __| |  | | | |  
+#  | |    / _ \\___ \| '_ \ / _ \| '_ \| | |_ | |  | | | |  
+#  | |___|  __/____) | | | | (_) | |_) | |__| | |__| |_| |_ 
+#   \_____\___|_____/|_| |_|\___/| .__/ \_____|\____/|_____|
+#                               | |                        
+#                               |_|                        
+#
+# Configuration file for CEShopGUI by kenygamer - https://kenygamer.us.to/discord/
+# In file file you can change how some things of CeShopGUI work.
+
+# success-rate: Enable success rate? If enabled, there is a 50% chance that
+#  the book is destroyed when it is redeemed.
+success-rate: true
+
+# one-click: Enable one-click feature? If enabled, all the held books will be redeemed in one click.
+one-click: true
+
+
+# prices: Configuration for prices.
+prices:
+
+  # price.type: The type of payment in the plugin.
+  #  0 = EXP will be used to buy custom enchant books.
+  #  1 = Money will be used to buy custom enchant books.
+  type: 1
+
+# price.list: The price to redeem every book per rarity. (Maximum: 9)
+  list:
+    Common: 50
+    Uncommon: 100
+    Rare: 150
+    Mythic: 200
+
+# tinkerer: Configuration for tinkerer.
+tinkerer:
+
+  # tinkerer.enable: Enable tinkerer? /tinkerer command allows you to convert  enchant books back into currency.
+  enable: true
+  # tinkerer.prices: List the prices per rarity.
+  prices:
+    Common: 25
+    Uncommon: 100
+    Rare: 150
+    Mythic: 200
+
+# filter: Configuration for filter.
+filter:
+
+  # filter.type: The type of filter.
+  #  0 = Inclusion. The enchants listed will be included in the custom enchant shop, rest will NOT show up.
+  #  1 = Exclusion. The enchants listed below will be excluded from the custom enchant shop, rest will show up.
+  type: 1
+  
+  # filter.enchants: List of enchants that will be included or excluded, as per above configuration.
+  enchants:
+    - overload
