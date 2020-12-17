@@ -140,7 +140,7 @@ final class EventListener implements Listener{
 						$enchantBook->setNamedTag($nbt);
 						
 								
-		        		$enchantBook->setLore(implode(TextFormat::EOL, $this->plugin->translateString("book-lore", $name, $lvl, $successRate, $destroyRate, $this->plugin->getEnchantAdapter()->getEnchantDescription($enchant))));
+		        		$enchantBook->setLore(explode(TextFormat::EOL, $this->plugin->translateString("book-lore", $name, $lvl, $successRate, $destroyRate, $this->plugin->getEnchantAdapter()->getEnchantDescription($enchant))));
 						$player->sendMessage($this->plugin->translateString("book-redeem", $name, $lvl));
         		        $player->getInventory()->addItem($enchantBook);
         		        $player->getInventory()->removeItem($slot);

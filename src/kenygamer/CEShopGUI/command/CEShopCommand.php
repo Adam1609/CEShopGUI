@@ -91,10 +91,9 @@ final class CEShopCommand extends Command{
 			$discard = $transaction->discard();
 			$player = $transaction->getPlayer();
 			$itemClicked = $transaction->getItemClicked();
-        	$rarity = explode(" ", TextFormat::clean($itemClicked->getName()))[0];
+        	$rarity = explode(" ", TextFormat::clean($itemClicked->getName()))[1];
         	($rarity);
         	$data = $this->plugin->getDataByRarity($rarity);
-			
         	if($data !== -1){
 				$item = ItemFactory::get(Item::BOOK);
         		$item->setCustomName($itemClicked->getName());
@@ -147,7 +146,7 @@ final class CEShopCommand extends Command{
 			$book = ItemFactory::get(Item::BOOK);
 			$book->setCustomName($this->plugin->translateString("book-name", $color, $rarity))->
 				setLore(
-					implode(TextFormat::EOL, $this->plugin->translateString("book-buy-lore", $this->plugin->getEnchantPriceList()[$data], $this->plugin->priceType === Main::PRICE_TYPE_EXP ? "EXP" : "Money"))
+					explode(TextFormat::EOL, $this->plugin->translateString("book-buy-lore", $this->plugin->getEnchantPriceList()[$data], $this->plugin->priceType === Main::PRICE_TYPE_EXP ? "EXP" : "Money"))
 				);
 			$menu->getInventory()->setItem($i, $book);
 		}
