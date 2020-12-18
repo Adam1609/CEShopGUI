@@ -79,7 +79,7 @@ final class Main extends PluginBase{
 	 */
 	public function onEnable() : void{
 		foreach(["config.yml", "lang.properties"] as $resource){
-			$this->saveResource($resource, true);
+			$this->saveResource($resource, false);
 		}
 		$this->lang = new Config($this->getDataFolder() . "lang.properties", Config::PROPERTIES);
 		
