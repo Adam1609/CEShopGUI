@@ -66,9 +66,9 @@ final class CEShopCommand extends Command{
 	}
 	
 	/**
-	 * @param InventoryTransaction $transaction
+	 * @param InvMenuTransaction $transaction
 	 */
-	private function removeInventory(InventoryTransaction $transaction) : void{
+	private function removeInventory(InvMenuTransaction $transaction) : void{
 		$transaction->getPlayer()->removeWindow($transaction->getAction()->getInventory());
 	}
 	
