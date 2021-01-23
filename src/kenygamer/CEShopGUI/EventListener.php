@@ -76,12 +76,10 @@ final class EventListener implements Listener{
 		}
 		foreach($transaction->getActions() as $action){
 			if($action instanceof SlotChangeAction){
-				if(($book = $action->getTargetItem()->getId()) === Item::ENCHANTED_BOOK && count($action->getSourceItem()->getEnchantments()) > 0){
+				if(($book = $action->getTargetItem())->getId() === Item::ENCHANTED_BOOK && count($action->getSourceItem()->getEnchantments()) > 0){
 					$nbt = $book->getNamedTag();
 					if($nbt->hasTag(Main::TAG_CHANCE)){
-						echo "[chance]\n";
 						$destroy = mt_rand(0, 99) <= ($chance = $nbt->getTag(Main::TAG_CHANCE));
-						var_dump($chance);
 						if($destroy){
 							$player->getInventory()->removeItem($book->setCount(1));
 							$event->setCancelled();
