@@ -92,7 +92,6 @@ final class CEShopCommand extends Command{
 			$player = $transaction->getPlayer();
 			$itemClicked = $transaction->getItemClicked();
         	$rarity = explode(" ", TextFormat::clean($itemClicked->getName()))[1];
-        	($rarity);
         	$data = $this->plugin->getDataByRarity($rarity);
         	if($data !== -1){
 				$item = ItemFactory::get(Item::BOOK);
