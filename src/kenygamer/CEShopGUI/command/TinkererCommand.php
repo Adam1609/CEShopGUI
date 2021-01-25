@@ -86,7 +86,7 @@ final class TinkererCommand extends Command{
 						EconomyAPI::getInstance()->addMoney($sender, $value);
 						break;
 					case Main::PRICE_TYPE_EXP:
-        				$sender->addXp($exp);
+        				$sender->addXp($value);
 						break;
 				}
         		$sender->sendMessage($this->plugin->translateString("tinkerer", $value, $this->plugin->priceType === Main::PRICE_TYPE_MONEY ? "\$" : "EXP"));
